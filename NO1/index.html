@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>UNINDRA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+
+    <!-- HEADER -->
+    <div class="header">
+        <img src="logo unindra.png" class="logo">
+        <div class="judul">
+            <h1>UNIVERSITAS INDRAPRASTA PGRI</h1>
+            <p>Jl. Nangka No.58 Tanjung Barat - Jaksel</p>
+        </div>
+    </div>
+
+    <!-- FRAME -->
+    <div class="frame">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>TAMPIL DATA<br>KAMPUS A</h3>
+            <button onclick="inputData()">Input Data Mahasiswa</button>
+            <button onclick="tampilData()">Tampil Data Mahasiswa</button>
+            <button onclick="jadwal()">Jadwal Kuliah Mahasiswa</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content" id="content">
+            <h2>Input Data Mahasiswa</h2>
+
+            <table class="form-table">
+                <tr>
+                    <td>NPM</td><td>:</td>
+                    <td><input type="text" id="npm"></td>
+                </tr>
+                <tr>
+                    <td>Nama</td><td>:</td>
+                    <td><input type="text" id="nama"></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td><td>:</td>
+                    <td><textarea id="alamat"></textarea></td>
+                </tr>
+            </table>
+
+            <div class="center">
+                <button class="submit" onclick="simpan()">Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Created By @202433500235 Baby Hoshi Salma
+    </div>
+
+</div>
+
+<script>
+/* ===== ARRAY PENYIMPAN DATA ===== */
+let dataMahasiswa = [];
+
+/* ===== FORM INPUT ===== */
+function inputData() {
+    content.innerHTML = `
+    <h2>Input Data Mahasiswa</h2>
+
+    <table class="form-table">
+        <tr>
+            <td>NPM</td><td>:</td>
+            <td><input type="text" id="npm"></td>
+        </tr>
+        <tr>
+            <td>Nama</td><td>:</td>
+            <td><input type="text" id="nama"></td>
+        </tr>
+        <tr>
+            <td>Alamat</td><td>:</td>
+            <td><textarea id="alamat"></textarea></td>
+        </tr>
+    </table>
+
+    <div class="center">
+        <button class="submit" onclick="simpan()">Submit</button>
+    </div>
+    `;
+}
+
+/* ===== SIMPAN DATA (TIDAK HAPUS DATA LAMA) ===== */
+function simpan() {
+    let npm = document.getElementById("npm").value;
+    let nama = document.getElementById("nama").value;
+    let alamat = document.getElementById("alamat").value;
+
+    dataMahasiswa.push({
+        npm: npm,
+        nama: nama,
+        alamat: alamat
+    });
+
+    alert("Data berhasil disimpan");
+
+    document.getElementById("npm").value = "";
+    document.getElementById("nama").value = "";
+    document.getElementById("alamat").value = "";
+}
+
+/* ===== TAMPIL DATA ===== */
+function tampilData() {
+    let html = `
+    <h2>Data Mahasiswa</h2>
+    <table class="jadwal">
+        <tr>
+            <th>No</th>
+            <th>NPM</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+        </tr>
+    `;
+
+    for (let i = 0; i < dataMahasiswa.length; i++) {
+        html += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${dataMahasiswa[i].npm}</td>
+            <td>${dataMahasiswa[i].nama}</td>
+            <td>${dataMahasiswa[i].alamat}</td>
+        </tr>
+        `;
+    }
+
+    html += `</table>`;
+    content.innerHTML = html;
+}
+
+/* ===== JADWAL ===== */
+function jadwal() {
+    content.innerHTML = `
+    <h2>Jadwal Kuliah Mahasiswa</h2>
+
+    <table class="jadwal">
+        <tr>
+            <th>Waktu</th>
+            <th class="senin">Senin</th>
+            <th class="selasa">Selasa</th>
+            <th class="rabu">Rabu</th>
+            <th class="kamis">Kamis</th>
+        </tr>
+        <tr>
+            <td>08:00 - 09:30</td>
+            <td class="senin">Matematika Diskrit</td>
+            <td class="selasa">Algoritma dan Pemrograman</td>
+            <td class="rabu" rowspan="2">Sistem Operasi</td>
+            <td class="kamis">Bahasa Inggris</td>
+        </tr>
+        <tr>
+            <td>09:30 - 11:00</td>
+            <td class="senin">Jaringan Komputer</td>
+            <td class="selasa">Kalkulus</td>
+            <td class="kamis">Pemrograman Web</td>
+        </tr>
+        <tr>
+            <td>11:00 - 12:30</td>
+            <td colspan="2" class="senin">Proyek Akhir</td>
+            <td class="rabu">Pemrograman Mobile</td>
+            <td class="kamis">Kecerdasan Buatan</td>
+        </tr>
+        <tr>
+            <td>13:00 - 14:30</td>
+            <td class="senin">Manajemen Basis Data</td>
+            <td class="selasa">Arsitektur Komputer</td>
+            <td class="rabu">Keamanan Siber</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="5" class="istirahat">Istirahat</td>
+        </tr>
+    </table>
+    `;
+}
+</script>
+
+</body>
+</html>

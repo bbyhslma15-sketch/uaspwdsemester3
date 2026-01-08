@@ -1,0 +1,170 @@
+body {
+    background: #cdeef3;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== KOTAK UTAMA ===== */
+.box {
+    width: 1100px;
+    margin: 30px auto;
+    border: 2px solid #999;
+    background: white;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    align-items: center;
+    background: #bfe6ea;
+    padding: 15px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.judul {
+    text-align: center;
+    width: 104%;
+}
+
+.judul h1 {
+    margin: 3;
+    font-size: 28px;
+}
+
+.judul p {
+    margin: 5px 0 0;
+    font-size: 17px;
+}
+
+/* ===== FRAME ===== */
+.frame {
+    display: flex;
+    min-height: 450px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 230px;
+    background: #f2f2f2;
+    padding: 15px;
+    border-right: 2px solid #999;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    background: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sidebar button:hover {
+    opacity: 0.9;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ===== FORM INPUT ===== */
+.form-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.form-table td {
+    padding: 8px;
+}
+
+.form-table input {
+    width: 320px;
+    padding: 6px;
+}
+
+.form-table textarea {
+    width: 320px;
+    height: 80px;
+    padding: 6px;
+}
+
+/* ===== TOMBOL ===== */
+.center {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.submit {
+    padding: 8px 25px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.submit:hover {
+    opacity: 0.9;
+}
+
+/* ===== TABEL DATA & JADWAL ===== */
+.jadwal {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.jadwal th,
+.jadwal td {
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.senin {
+    background: #ffd6d6;
+}
+
+.selasa {
+    background: #d6ffd6;
+}
+
+.rabu {
+    background: #d6d6ff;
+}
+
+.kamis {
+    background: #fff2cc;
+}
+
+.istirahat {
+    background: #eee;
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #bfe6ea;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
